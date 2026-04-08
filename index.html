@@ -830,6 +830,46 @@ footer {
   justify-content: center;
   font-size: 1.5rem;
 }
+
+.map-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.map-mini {
+  width: 300px;
+  height: 200px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid var(--border-soft);
+  background: var(--bg-soft);
+}
+
+.map-mini img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.map-mini .map-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-main);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.map-mini:hover .map-overlay {
+  opacity: 1;
+}
 </style>
 </head>
 <body>
@@ -899,6 +939,18 @@ footer {
 
   <div class="divider"></div>
 
+ <div class="stat map-stat">
+    <a href="https://www.google.com/maps?q=Via+Catullo,+10,+70022+Altamura+BA" target="_blank">
+      <div class="map-mini">
+        <img src="map-altamura.jpg" alt="Mappa sede">
+        <div class="map-overlay">Apri</div>
+      </div>
+    </a>
+    <span class="label">Dove siamo</span>
+  </div>
+
+<div class="divider"></div>
+
   <!-- CATEGORIE SOA -->
   <!-- <div class="stat soa-stat">>
     // e <div class="soa-holder">
@@ -957,14 +1009,9 @@ footer {
       <p>Contattaci per sopralluoghi, preventivi o informazioni sull’organizzazione del cantiere.</p>
       <div id="map-container" style="width: 100%; height: 300px; border-radius: 12px; overflow: hidden; margin-top: 20px;">
 <div class="map-static">
-  <a 
-    href="https://www.google.com/maps?q=Via+Catullo,+10,+70022+Altamura+BA"
-    target="_blank"
-    aria-label="Apri la mappa su Google Maps"
-  >
+ 
     <img src="map-altamura.jpg" alt="Mappa sede Forte Edilizia">
-    <span class="map-overlay">Apri su Google Maps</span>
-  </a>
+
 </div>
 
 </div>
