@@ -870,6 +870,9 @@ footer {
 .map-mini:hover .map-overlay {
   opacity: 1;
 }
+ .edilizia {
+display: hide;
+ }
 </style>
 </head>
 <body>
@@ -1018,10 +1021,12 @@ footer {
     </div>
     <form id="contact-form" action="https://formspree.io/f/xnjvawqz" method="POST">
     <input type="hidden" name="_format" value="html">
-      <p><strong>Indirizzo:</strong> Via Catullo, 10, Altamura(BA)</p>
+      <div class="edilizia">
+     <p><strong>Indirizzo:</strong> Via Catullo, 10, Altamura(BA)</p>
       <p><strong>Telefono:</strong>389 5556903, 329 6216885</p>
       <p><strong>Email:</strong>info@forteedilizia.com</p>
       <p><strong>PEC:</strong>forteedilizia@pec.it</p>
+      </div>
       <input name="nome" placeholder="Nome e cognome" />
       <input name="email" name="email" placeholder="Indirizzo email" />
       <textarea rows="4" name="messaggio" placeholder="Testo"></textarea>
