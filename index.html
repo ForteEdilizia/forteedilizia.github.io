@@ -271,6 +271,17 @@ section {
   gap: 40px;
 }
 
+.stats-arrow {
+  font-size: 5rem;
+  color: var(--accent);
+  font-weight: 300;
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.8s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .service {
   background: var(--bg-soft);
   padding: 40px;
@@ -581,6 +592,7 @@ padding: 9px 25px;
 
 /* STATS BAND */
 .stats-band {
+overflow-x: hidden;
   background: linear-gradient(
     180deg,
     #f3fbf6,
@@ -592,6 +604,7 @@ padding: 9px 25px;
 .stats-inner {
   max-width: 1200px;
   margin: 0 auto;
+width: 100%;
 }
 
 .stats-header {
@@ -600,14 +613,24 @@ padding: 9px 25px;
 
 .stats-line {
   display: flex;
+  
   align-items: center;
-  justify-content: space-between;
-  gap: 40px;
+
+  justify-content: center;
+  gap: 100px;
+  flex-wrap: wrap;
+width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .stat {
   text-align: center;
   min-width: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+justify-content: center;
 }
 
 /* SOA animation */
@@ -644,9 +667,11 @@ padding: 9px 25px;
 display: flex;
 height:60px;
   align-items: center;
-  gap: 15px;
+  gap: 12px;
   font-size: 1.4rem;
   font-weight: 600;
+  max-width: 100%;
+justify-content: center;
 }
 
 .area-line {
@@ -654,6 +679,7 @@ height:60px;
   height: 3px;
   background: var(--accent);
   transition: width 1.2s ease;
+  max-width: 100px;
 }
 
 .area-holder.active .area-line {
@@ -707,6 +733,9 @@ height:60px;
     flex-direction: column;
   }
 
+.stats-arrow {
+display: none;
+}
   .divider {
     width: 80px;
     height: 1px;
@@ -838,7 +867,7 @@ footer {
 }
 
 .map-mini {
-  width: 300px;
+  width: 350px;
   height: 200px;
   border-radius: 16px;
   overflow: hidden;
@@ -873,6 +902,71 @@ footer {
  .edilizia {
 display: none;
  }
+
+.wide {
+  flex: 2;
+}
+
+.map-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+width: 100%;
+  max-width: 100%;
+}
+
+.map-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.map-text p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+.map-stat.wide {
+  display: flex;
+  justify-content: center;
+}
+
+
+@media(max-width: 700px) {
+  section {
+    padding: 60px 20px;
+  }
+.map-mini {
+  width: 100%;
+  max-width: 300px;
+  height: 200px;
+}
+.stats-line {
+    padding: 0;
+    margin: 0;
+  }
+
+  .map-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .map-text {
+    width: 100%;
+  }
+
+}
+
+.area-holder,
+.area-stat {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+
 </style>
 </head>
 <body>
@@ -935,22 +1029,25 @@ display: none;
     <div class="stats-line">
 
   <!-- ANNI ESPERIENZA -->
-  <div class="stat">
-    <span class="value" data-target="29">0</span>
-    <span class="label">Anni di esperienza</span>
-  </div>
-
-  <div class="divider"></div>
-
- <div class="stat map-stat">
+ <div class="stats-arrow">></div>
+ <div class="stat map-stat wide">
+<div class="map-row">
     <a href="https://www.google.com/maps?q=Via+Catullo,+10,+70022+Altamura+BA" target="_blank">
       <div class="map-mini">
         <img src="map-altamura.jpg" alt="Mappa sede">
         <div class="map-overlay">Apri</div>
       </div>
     </a>
-    <span class="label">Dove siamo</span>
+    
+<div class="map-text">
+    <p>🕒 Lun - Ven: 07:00 – 18:00</p>
+    <p> Sopralluoghi su appuntamento</p>
+    <p> Interventi rapidi disponibili</p>
+</div>  
+</div>
+<span class="label">Dove siamo</span>
   </div>
+
 
 <div class="divider"></div>
 
@@ -1054,6 +1151,8 @@ if (isTouchDevice) {
 
   // mostra subito i numeri
   document.querySelectorAll('.stat .value').forEach(el => {
+const arrow = document.querySelector('.stats-arrow');
+if (arrow) observer.observe(arrow);
     const target = el.getAttribute('data-target');
     el.textContent = target + "+";
   });
