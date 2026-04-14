@@ -73,7 +73,7 @@ html, body {
   --accent: #4caf50;
   --cursor-yellow: green;
   --text-main: #0f2e1c;
-  --text-muted: #607d68;
+  --text-muted: #425948;
   --border-soft: rgba(76,175,80,0.2);
   --nav-height: 88px;
 }
@@ -157,7 +157,10 @@ nav li:hover::after {
   padding: 40px;
   gap: 60px;
   align-items: center;
-  background: var(--bg-soft);
+  background: url("texture.jpg");
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
 }
 
 .hero h1 {
@@ -236,8 +239,11 @@ display: none;}
 
 /* SECTION BASE */
 section {
-  padding: 120px 80px;
-  background: var(--bg-main);
+  padding: 100px 80px;
+  background: url("texture2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .section-label {
@@ -268,7 +274,7 @@ section {
 .services {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  gap: 10px;
 }
 
 .stats-arrow {
@@ -357,7 +363,10 @@ section {
 
 /* CONTACT */
 .contact-box {
-  background: var(--bg-soft);
+  background: url("texture.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   padding: 80px;
   border-radius: 20px;
   display: grid;
@@ -406,7 +415,7 @@ footer {
   :root {
     --nav-height: 64px;
     }
-  nav, section { padding: 60px 30px; }
+  nav, section { padding: 60px 60px; }
   nav {
     min-height: 64px;
     padding: 16px 20px;
@@ -593,12 +602,11 @@ padding: 9px 25px;
 /* STATS BAND */
 .stats-band {
 overflow-x: hidden;
-  background: linear-gradient(
-    180deg,
-    #f3fbf6,
-    #ffffff
-  );
-  padding: 140px 80px;
+  background:  url("texture.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 100px 100px;
 }
 
 .stats-inner {
@@ -717,8 +725,8 @@ justify-content: center;
 }
 
 .divider {
-  width: 1px;
-  height: 80px;
+  width: 18px;
+  height: 100px;
   background: linear-gradient(
     to bottom,
     transparent,
@@ -738,7 +746,7 @@ display: none;
 }
   .divider {
     width: 80px;
-    height: 1px;
+    height: 30px;
   }
 }
 /* PROJECT MODAL */
@@ -924,9 +932,9 @@ width: 100%;
 }
 
 .map-text p {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  margin-top: 6px;
+  font-size: 1.2rem;
+  color: var(--text-main);
+  margin-top: 15px;
 }
 
 .map-stat.wide {
@@ -937,7 +945,7 @@ width: 100%;
 
 @media(max-width: 700px) {
   section {
-    padding: 60px 20px;
+    padding: 60px 60px;
   }
 .map-mini {
   width: 100%;
@@ -1040,15 +1048,15 @@ width: 100%;
     </a>
     
 <div class="map-text">
-    <p>🕒 Lun - Ven: </p>
-    <p> .</p>
+    <p>○ Via Catullo, 10</p>
+    <p>○ 70022 Altamura a(Bari)</p>
 </div>  
 </div>
 <span class="label">Dove siamo</span>
   </div>
 
 
-<div class="divider"></div>
+
 
   <!-- CATEGORIE SOA -->
   <!-- <div class="stat soa-stat">>
@@ -1064,8 +1072,7 @@ width: 100%;
     // e <span class="label">Categorie SOA</span>
   // e </div>
 
-  <div class="divider"></div>
-
+ 
   <!-- AREA ATTIVITÀ -->
   <div class="stat area-stat">
     <div class="area-holder">
